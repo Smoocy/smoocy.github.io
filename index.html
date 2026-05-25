@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Girts Ricevs-KaleJs — AI & Automation</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+    }
+
+    a { color: #58a6ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* HEADER */
+    header {
+      border-bottom: 1px solid #21262d;
+      padding-bottom: 40px;
+      margin-bottom: 48px;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    header .subtitle {
+      font-size: 1.05rem;
+      color: #58a6ff;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    header .meta {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: #8b949e;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    header .meta a { color: #8b949e; }
+    header .meta a:hover { color: #58a6ff; }
+
+    /* SECTIONS */
+    section { margin-bottom: 48px; }
+
+    section h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #8b949e;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #21262d;
+    }
+
+    /* ABOUT */
+    .about p {
+      font-size: 1rem;
+      color: #c9d1d9;
+      margin-bottom: 14px;
+    }
+
+    /* PROJECTS */
+    .projects { display: flex; flex-direction: column; gap: 20px; }
+
+    .project-card {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 8px;
+      padding: 20px 24px;
+      transition: border-color 0.2s;
+    }
+
+    .project-card:hover { border-color: #58a6ff; }
+
+    .project-card .proj-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-card .proj-title a { color: #58a6ff; font-size: 0.85rem; font-weight: 400; }
+
+    .project-card .proj-stack {
+      font-size: 0.8rem;
+      color: #8b949e;
+      margin-top: 4px;
+      margin-bottom: 10px;
+    }
+
+    .project-card .proj-desc {
+      font-size: 0.92rem;
+      color: #c9d1d9;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: #1f6feb22;
+      color: #58a6ff;
+      border: 1px solid #1f6feb55;
+      letter-spacing: 0.4px;
+    }
+
+    .badge.live {
+      background: #1a7f3722;
+      color: #3fb950;
+      border-color: #3fb95055;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 540px) { .skills-grid { grid-template-columns: 1fr; } }
+
+    .skill-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .skill-row .skill-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #58a6ff;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .skill-row .skill-items {
+      font-size: 0.88rem;
+      color: #c9d1d9;
+    }
+
+    /* EXPERIENCE */
+    .exp-item { margin-bottom: 24px; }
+
+    .exp-item .exp-title {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .exp-item .exp-company {
+      font-size: 0.88rem;
+      color: #58a6ff;
+    }
+
+    .exp-item .exp-dates {
+      font-size: 0.8rem;
+      color: #8b949e;
+      margin-top: 2px;
+    }
+
+    .exp-item .exp-desc {
+      font-size: 0.9rem;
+      color: #c9d1d9;
+      margin-top: 6px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #21262d;
+      padding-top: 32px;
+      font-size: 0.85rem;
+      color: #8b949e;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer a { color: #8b949e; }
+    footer a:hover { color: #58a6ff; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Girts Ricevs-KaleJs</h1>
+    <div class="subtitle">AI &amp; Automation · Riga, Latvia</div>
+    <div class="meta">
+      <span>girtskalejs123@gmail.com</span>
+      <span>+371 29802721</span>
+      <a href="https://github.com/Smoocy" target="_blank">github.com/Smoocy</a>
+      <a href="https://www.linkedin.com/in/girts-ricevs-kaleJs-35834037b/" target="_blank">LinkedIn</a>
+    </div>
+  </header>
+
+  <section class="about">
+    <h2>About</h2>
+    <p>
+      I work at the intersection of AI and business operations. Currently Head of Corporate Sales
+      at AI Master Lab, a Latvian AI consultancy, where I help organizations across healthcare,
+      logistics, and the public sector identify where AI can realistically help them and
+      translate that into working solutions.
+    </p>
+    <p>
+      My day-to-day involves running discovery sessions with C-level executives, mapping
+      end-to-end business processes, identifying automation opportunities, and coordinating
+      implementation with technical teams. I sit between the business and the technology —
+      and I have learned that this gap is where most AI initiatives succeed or fail.
+    </p>
+    <p>
+      Outside of that, I build things to learn. I trained a computer vision model from scratch,
+      deployed a live AI application, and built a custom CRM using no-code tools connected to
+      Claude API. I believe the only way to credibly drive AI adoption is to understand what
+      it actually takes to build something that works.
+    </p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+
+      <div class="project-card">
+        <div class="proj-title">
+          Custom CRM — AI Follow-up System
+          <span class="badge">Production</span>
+        </div>
+        <div class="proj-stack">Lovable · Claude API · Supabase</div>
+        <div class="proj-desc">
+          Built a fully functional CRM for managing corporate client pipelines at AI Master Lab.
+          Front-end built with Lovable (no-code), data stored in Supabase, and Claude API integrated
+          to surface intelligent follow-up reminders when a client has not been contacted in several days.
+          In active daily use. Entire stack runs at zero cost.
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="proj-title">
+          AI Email Classifier
+          <span class="badge live">Live</span>
+          <a href="https://email-classifier-hxmrhjj8xnt8a5ffabb8tl.streamlit.app" target="_blank">demo</a>
+          <a href="https://github.com/Smoocy/email-classifier" target="_blank">GitHub</a>
+        </div>
+        <div class="proj-stack">Python · Claude API (Sonnet &amp; Haiku) · Streamlit · Anthropic SDK</div>
+        <div class="proj-desc">
+          Classifies emails across 5 dimensions: category, priority, sentiment, summary, and recommended action.
+          Built a 25-email evaluation set with hand-assigned ground truth labels and ran a structured
+          model comparison — Sonnet achieved 96% vs Haiku's 84% category accuracy, at 3x the cost.
+          Deployed on Streamlit Cloud with multilingual support.
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="proj-title">
+          AI Parking Detection System
+          <a href="https://github.com/Smoocy/ai-parking-detection" target="_blank">GitHub</a>
+        </div>
+        <div class="proj-stack">Python · YOLOv8m · DeepSORT · OpenCV · PyTorch</div>
+        <div class="proj-desc">
+          Trained a custom object detection model on a hand-annotated dataset across 23 iterations,
+          progressing from ~60% to 98.5% mAP@50. Full ML pipeline ownership: data annotation,
+          training, validation, and real-time video inference with per-spot status overlay.
+          Key lesson: dataset quality drives results more than architecture choices.
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="proj-title">
+          Job Application Tracker
+          <span class="badge">n8n Workflow</span>
+        </div>
+        <div class="proj-stack">n8n · Gmail · Google Sheets</div>
+        <div class="proj-desc">
+          Automated job application tracking: Gmail trigger detects application confirmations,
+          structures the data, appends it to Google Sheets, waits, then sends a follow-up email
+          and updates the record. Built from scratch to understand how automation nodes connect
+          in practice.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <span class="skill-label">AI / ML</span>
+        <span class="skill-items">Claude API · OpenAI API · YOLOv8 · Prompt Engineering · Eval Design</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Automation</span>
+        <span class="skill-items">n8n · REST APIs · Webhooks · Supabase · Process Mapping</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Build Tools</span>
+        <span class="skill-items">Lovable · Streamlit · Figma · Framer · Git / GitHub</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Business</span>
+        <span class="skill-items">AI Consulting · Stakeholder Management · Process Analysis · Proposal Writing</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="exp-item">
+      <div class="exp-title">AI Implementation Lead / Head of Corporate Sales</div>
+      <div class="exp-company">AI Master Lab</div>
+      <div class="exp-dates">Feb 2026 – Present · Riga, Latvia</div>
+      <div class="exp-desc">
+        Lead AI adoption strategy for B2B/B2G clients across healthcare, logistics, and government.
+        Conduct process analysis to identify automation opportunities and translate findings into
+        technical briefs for a 40+ expert team. Engage C-level executives on AI ROI and implementation roadmaps.
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-title">Freelance UI/UX Designer</div>
+      <div class="exp-company">Independent</div>
+      <div class="exp-dates">Feb 2025 – Present · Remote</div>
+      <div class="exp-desc">
+        Design digital products in Figma and Framer for international clients.
+        Integrate AI design tools to accelerate workflows. Self-taught in 2 months while working full-time.
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <a href="mailto:girtskalejs123@gmail.com">girtskalejs123@gmail.com</a>
+    <a href="https://github.com/Smoocy" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/girts-ricevs-kaleJs-35834037b/" target="_blank">LinkedIn</a>
+    <span>Riga, Latvia · Open to work</span>
+  </footer>
+
+</div>
+</body>
+</html>
