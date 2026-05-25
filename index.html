@@ -882,17 +882,29 @@ function closeDrawer(){
 }
 
 // ── FORM ──────────────────────────────────────────────────────────────────────
-document.getElementById('cf').addEventListener('submit',e=>{
+document.getElementById('cf').addEventListener('submit',async e=>{
     e.preventDefault();
     const btn=document.getElementById('fsub');
-    btn.textContent='Sent ✓'; btn.style.background='linear-gradient(135deg,#065f46,#047857)';
-    btn.disabled=true;
-    setTimeout(()=>{
-        btn.textContent='Send message →';
-        btn.style.background='';
-        btn.disabled=false;
-        e.target.reset();
-    },3200);
+    const form=e.target;
+    btn.textContent='Sending...'; btn.disabled=true;
+    try {
+        const res=await fetch('https://formspree.io/f/xredajwn',{
+            method:'POST',
+            body:new FormData(form),
+            headers:{Accept:'application/json'}
+        });
+        if(res.ok){
+            btn.textContent='Sent ✓'; btn.style.background='linear-gradient(135deg,#065f46,#047857)';
+            form.reset();
+            setTimeout(()=>{ btn.textContent='Send message →'; btn.style.background=''; btn.disabled=false; },3200);
+        } else {
+            btn.textContent='Error — try email'; btn.style.background='linear-gradient(135deg,#7f1d1d,#991b1b)';
+            setTimeout(()=>{ btn.textContent='Send message →'; btn.style.background=''; btn.disabled=false; },3200);
+        }
+    } catch(err){
+        btn.textContent='Error — try email'; btn.style.background='linear-gradient(135deg,#7f1d1d,#991b1b)';
+        setTimeout(()=>{ btn.textContent='Send message →'; btn.style.background=''; btn.disabled=false; },3200);
+    }
 });
 
 </script>
